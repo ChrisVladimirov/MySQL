@@ -1,6 +1,8 @@
 create database `minions`;
 use minions;
+
 #1st task
+
 create table `minions`
 (
     `id`   int primary key auto_increment,
@@ -12,29 +14,39 @@ create table `towns`
     `town_id` int primary key auto_increment,
     `name`    varchar(50)
 );
+
 #2nd task
 alter table `towns`
     rename column `town_id` to `id`;
 alter table `minions`
     add column `town_id` int;
-/*alter table `minions`
+
+/*ALTERNATIVELY:
+alter table `minions`
     add constraint foreign key (town_id)
         references towns (`id`);*/
+
 #3rd task
-/*insert into `towns`(id, name)
-VALUES (1, 'Sofia'),
-       (2, 'Plovdiv'),
-       (3, 'Varna');*/
+
 insert into `minions`(id, name, age, town_id)
 VALUES (1, 'Kevin', 22, 1),
        (2, 'Bob', 15, 3),
        (3, 'Steward', null, 2);
 alter table `minions`
     modify column `age` int default null;
+
+/*ALTERNATIVELY:
+insert into `towns`(id, name)
+VALUES (1, 'Sofia'),
+       (2, 'Plovdiv'),
+       (3, 'Varna');*/
+
 #4th task
 truncate `minions`;
+
 #5th task
 drop table `minions`, `towns`;
+
 #6th task
 create table `people`
 (
@@ -54,6 +66,7 @@ VALUES ('Peter', null, 1.83, 59.47, 'm', '2020-05-08', null),
        ('Pepi', null, 2.08, 89.6, 'f', '2022-03-08', null),
        ('John', null, 1.93, 69.6, 'm', '2021-07-08', 'brrr'),
        ('Maria', null, 1.71, 49.02, 'f', '2019-10-03', null);
+
 #7th task
 create table `users`
 (
@@ -70,18 +83,22 @@ VALUES (1, 'Pesho24', 'yfy3xg', null, '02:30', false),
        (3, 'Pesho29', 'yfy5xg', null, '02:00', true),
        (4, 'Pesho26', 'yfycxg', null, '08:30', false),
        (5, 'Pesho25', 'yfy_xg', null, '02:30', true);
+
 #8th task
 alter table `users`
     drop primary key,
     add constraint pk_users primary key (id, username);
+
 #9th task
 alter table users
     modify column last_login_time timestamp default current_timestamp;
+
 #10th task
 alter table users
     drop primary key,
     add primary key (`id`),
     modify column username varchar(30) not null unique;
+
 #11th task
 create database `Movies`;
 create table `directors`
@@ -140,6 +157,7 @@ VALUES (1, 'thriller', null),
        (3, 'thriller', null),
        (4, 'action', null),
        (5, 'documentary', null);
+
 #12th task
 create database `car_rental`;
 use car_rental;
@@ -224,6 +242,7 @@ insert into rental_orders(id, employee_id, customer_id, car_id, car_condition, t
 VALUES (1, 2, 3, 3, 5, 78, 20, 40, 10000, '2012-12-14', '2013-12-15', 100, 24, null, null, null),
        (2, 2, 3, 3, 5, 78, 20, 40, 1000, '2012-12-11', '2013-12-17', 10, 26, null, null, null),
        (3, 2, 3, 3, 5, 78, 20, 40, 100, '2012-12-10', '2013-12-16', 105, 25, null, null, null);
+
 #13th task
 create database `soft_uni`;
 use soft_uni;
@@ -273,11 +292,13 @@ values (1, 'Ivan', 'Ivanov', 'Ivanov', '.NET Developer', 4, '2013-02-01', 3500.0
        (3, 'Maria', 'Petrova', 'Ivanova', 'Intern', 5, '2016-08-08', 525.25),
        (4, 'Georgi', 'Terziev', 'Ivanov', 'CEO', 2, '2007-12-09', 3000.00),
        (5, 'Peter', 'Pan', 'Pan', 'Intern', 3, '2016-08-28', 599.88);
+
 #14th task
 select *
 from towns,
      departments,
      employees;
+
 #15th task
 select *
 from `towns`
@@ -288,13 +309,16 @@ order by name asc;
 select *
 from `employees`
 order by salary desc;
+
 #16th task
 select name from towns order by name asc;
 select name from departments order by name asc;
 select first_name, last_name, job_title, salary from employees order by salary desc;
+
 #17th task
 update employees
 set salary = salary * 1.1;
 select salary from employees;
+
 #18th task
 /*delete from `occupancies`;*/
