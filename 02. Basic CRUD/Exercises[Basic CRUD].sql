@@ -1,11 +1,15 @@
 use soft_uni;
+
 #1st task
 /*Write a SQL query to find all available information about the departments. Sort the information by id.*/
+
 select *
 from departments
 order by department_id;
+
 #2nd task
 /*Write SQL query to find all department names. Sort the information by id. */
+
 select name
 from departments
 order by department_id;
