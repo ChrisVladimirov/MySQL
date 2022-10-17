@@ -6,5 +6,5 @@ Solutions for the Tasks and Assignments in the MySQL_January_2022 course at the 
 - Built-in Functions
 - Data Aggregation
 - Table Relations
-- Subqueries, JOINs and Indices
+- Subqueries, JOINs, and Indices
 - Defining Functions, Procedures, Transactions, Triggers
